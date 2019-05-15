@@ -19,12 +19,12 @@ Gem::Specification.new do |s|
   s.name        = "phone_com_client"
   s.version     = PhoneComClient::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["PhoneCom-Codegen"]
+  s.authors     = ["Swagger-Codegen"]
   s.email       = ["apisupport@phone.com"]
-  s.homepage    = "https://github.com/swagger-api/swagger-codegen"
+  s.homepage    = "https://github.com/konung/phone_com_client"
   s.summary     = "Phone.com API Ruby Gem"
-  s.description = "This is a Phone.com api PhoneCom definition"
-  s.license     = "Unlicense"
+  s.description = "This is a Phone.com api PhoneCom definition. Based on Swagger/OpenAPI, generated using SwaggerHub and polished by hand."
+  s.license     = "MIT"
   s.required_ruby_version = ">= 1.9"
 
   s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
