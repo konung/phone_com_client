@@ -11,5 +11,5 @@ PhoneCom Codegen version: 2.4.4
 =end
 
 module PhoneComClient
-  VERSION = '1.0.0'
+  VERSION = '1.0.1'
 end
