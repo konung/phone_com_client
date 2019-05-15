@@ -1,8 +1,8 @@
-# SwaggerClient::PatchVoicemailParams
+# PhoneComClient::PatchVoicemailParams
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_new** | **String** | Status of voicemail | [optional] 
+**is_new** | **String** | Status of voicemail | [optional]
 
 

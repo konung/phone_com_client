@@ -1,8 +1,8 @@
-# SwaggerClient::CreateGroupParams
+# PhoneComClient::CreateGroupParams
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | Group name | [optional] 
+**name** | **String** | Group name | [optional]
 
 

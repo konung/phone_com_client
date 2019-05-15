@@ -1,4 +1,4 @@
-# SwaggerClient::SchedulesApi
+# PhoneComClient::SchedulesApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -18,16 +18,16 @@ Show details of an individual schedule
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::SchedulesApi.new
+api_instance = PhoneComClient::SchedulesApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -38,7 +38,7 @@ begin
   #Show details of an individual schedule
   result = api_instance.get_account_schedule(account_id, schedule_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling SchedulesApi->get_account_schedule: #{e}"
 end
 ```
@@ -47,8 +47,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **schedule_id** | **Integer**| Schedule ID | 
+ **account_id** | **Integer**| Account ID |
+ **schedule_id** | **Integer**| Schedule ID |
 
 ### Return type
 
@@ -75,20 +75,20 @@ Get a list of schedules for an account
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::SchedulesApi.new
+api_instance = PhoneComClient::SchedulesApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   filters_name: ['filters_name_example'], # Array<String> | Name filter
   sort_id: 'sort_id_example', # String | ID sorting
@@ -102,7 +102,7 @@ begin
   #Get a list of schedules for an account
   result = api_instance.list_account_schedules(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling SchedulesApi->list_account_schedules: #{e}"
 end
 ```
@@ -111,14 +111,14 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **sort_name** | **String**| Name sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **sort_name** | **String**| Name sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 

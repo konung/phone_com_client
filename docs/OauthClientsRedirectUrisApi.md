@@ -1,4 +1,4 @@
-# SwaggerClient::OauthClientsRedirectUrisApi
+# PhoneComClient::OauthClientsRedirectUrisApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -20,30 +20,30 @@ Create an OAuth Client Redirect URI record.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::OauthClientsRedirectUrisApi.new
+api_instance = PhoneComClient::OauthClientsRedirectUrisApi.new
 
 account_id = 56 # Integer | Account ID
 
 client_id = 56 # Integer | Client ID
 
-opts = { 
-  data: SwaggerClient::CreateRedirectUriParams.new # CreateRedirectUriParams | Redirect Uri data
+opts = {
+  data: PhoneComClient::CreateRedirectUriParams.new # CreateRedirectUriParams | Redirect Uri data
 }
 
 begin
   #Create an OAuth Client Redirect URI record.
   result = api_instance.create_account_oauth_clients_redirect_uri(account_id, client_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling OauthClientsRedirectUrisApi->create_account_oauth_clients_redirect_uri: #{e}"
 end
 ```
@@ -52,9 +52,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **client_id** | **Integer**| Client ID | 
- **data** | [**CreateRedirectUriParams**](CreateRedirectUriParams.md)| Redirect Uri data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **client_id** | **Integer**| Client ID |
+ **data** | [**CreateRedirectUriParams**](CreateRedirectUriParams.md)| Redirect Uri data | [optional]
 
 ### Return type
 
@@ -81,16 +81,16 @@ Delete an OAuth Client Redirect URI record.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::OauthClientsRedirectUrisApi.new
+api_instance = PhoneComClient::OauthClientsRedirectUrisApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -103,7 +103,7 @@ begin
   #Delete an OAuth Client Redirect URI record.
   result = api_instance.delete_account_oauth_clients_redirect_uri(account_id, client_id, uri_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling OauthClientsRedirectUrisApi->delete_account_oauth_clients_redirect_uri: #{e}"
 end
 ```
@@ -112,9 +112,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **client_id** | **Integer**| Client ID | 
- **uri_id** | **Integer**| Redirect URI ID | 
+ **account_id** | **Integer**| Account ID |
+ **client_id** | **Integer**| Client ID |
+ **uri_id** | **Integer**| Redirect URI ID |
 
 ### Return type
 
@@ -141,16 +141,16 @@ Get details of an OAuth Client Redirect URI record.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::OauthClientsRedirectUrisApi.new
+api_instance = PhoneComClient::OauthClientsRedirectUrisApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -163,7 +163,7 @@ begin
   #Get details of an OAuth Client Redirect URI record.
   result = api_instance.get_account_oauth_clients_redirect_uri(account_id, client_id, uri_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling OauthClientsRedirectUrisApi->get_account_oauth_clients_redirect_uri: #{e}"
 end
 ```
@@ -172,9 +172,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **client_id** | **Integer**| Client ID | 
- **uri_id** | **Integer**| Redirect URI ID | 
+ **account_id** | **Integer**| Account ID |
+ **client_id** | **Integer**| Client ID |
+ **uri_id** | **Integer**| Redirect URI ID |
 
 ### Return type
 
@@ -201,22 +201,22 @@ Get a list of OAuth Client Redirect URIs for an account.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::OauthClientsRedirectUrisApi.new
+api_instance = PhoneComClient::OauthClientsRedirectUrisApi.new
 
 account_id = 56 # Integer | Account ID
 
 client_id = 56 # Integer | Client ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   sort_id: 'sort_id_example', # String | ID sorting
   limit: 56, # Integer | Max results
@@ -228,7 +228,7 @@ begin
   #Get a list of OAuth Client Redirect URIs for an account.
   result = api_instance.list_account_oauth_clients_redirect_uris(account_id, client_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling OauthClientsRedirectUrisApi->list_account_oauth_clients_redirect_uris: #{e}"
 end
 ```
@@ -237,13 +237,13 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **client_id** | **Integer**| Client ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **client_id** | **Integer**| Client ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 

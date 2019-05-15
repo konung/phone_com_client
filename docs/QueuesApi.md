@@ -1,4 +1,4 @@
-# SwaggerClient::QueuesApi
+# PhoneComClient::QueuesApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -21,28 +21,28 @@ Create a queue. See Account Queues for more info on the properties.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::QueuesApi.new
+api_instance = PhoneComClient::QueuesApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
-  data: SwaggerClient::CreateQueueParams.new # CreateQueueParams | Queue data
+opts = {
+  data: PhoneComClient::CreateQueueParams.new # CreateQueueParams | Queue data
 }
 
 begin
   #Create a queue.
   result = api_instance.create_account_queue(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling QueuesApi->create_account_queue: #{e}"
 end
 ```
@@ -51,8 +51,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **data** | [**CreateQueueParams**](CreateQueueParams.md)| Queue data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **data** | [**CreateQueueParams**](CreateQueueParams.md)| Queue data | [optional]
 
 ### Return type
 
@@ -79,16 +79,16 @@ Delete a queue. See Account Queues for more info on the properties.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::QueuesApi.new
+api_instance = PhoneComClient::QueuesApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -99,7 +99,7 @@ begin
   #Delete a queue.
   result = api_instance.delete_account_queue(account_id, queue_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling QueuesApi->delete_account_queue: #{e}"
 end
 ```
@@ -108,8 +108,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **queue_id** | **Integer**| Queue ID | 
+ **account_id** | **Integer**| Account ID |
+ **queue_id** | **Integer**| Queue ID |
 
 ### Return type
 
@@ -136,16 +136,16 @@ Show details of an individual queue. See Account Queues for more info on the pro
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::QueuesApi.new
+api_instance = PhoneComClient::QueuesApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -156,7 +156,7 @@ begin
   #Show details of an individual queue.
   result = api_instance.get_account_queue(account_id, queue_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling QueuesApi->get_account_queue: #{e}"
 end
 ```
@@ -165,8 +165,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **queue_id** | **Integer**| Queue ID | 
+ **account_id** | **Integer**| Account ID |
+ **queue_id** | **Integer**| Queue ID |
 
 ### Return type
 
@@ -193,20 +193,20 @@ Get a list of queues for an account. See Account Queues for more info on the pro
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::QueuesApi.new
+api_instance = PhoneComClient::QueuesApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   filters_name: ['filters_name_example'], # Array<String> | Name filter
   sort_id: 'sort_id_example', # String | ID sorting
@@ -220,7 +220,7 @@ begin
   #Get a list of queues for an account.
   result = api_instance.list_account_queues(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling QueuesApi->list_account_queues: #{e}"
 end
 ```
@@ -229,14 +229,14 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **sort_name** | **String**| Name sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **sort_name** | **String**| Name sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 
@@ -263,30 +263,30 @@ Replace a queue. See Account Queues for more info on the properties.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::QueuesApi.new
+api_instance = PhoneComClient::QueuesApi.new
 
 account_id = 56 # Integer | Account ID
 
 queue_id = 56 # Integer | Queue ID
 
-opts = { 
-  data: SwaggerClient::CreateQueueParams.new # CreateQueueParams | Queue data
+opts = {
+  data: PhoneComClient::CreateQueueParams.new # CreateQueueParams | Queue data
 }
 
 begin
   #Replace a queue.
   result = api_instance.replace_account_queue(account_id, queue_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling QueuesApi->replace_account_queue: #{e}"
 end
 ```
@@ -295,9 +295,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **queue_id** | **Integer**| Queue ID | 
- **data** | [**CreateQueueParams**](CreateQueueParams.md)| Queue data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **queue_id** | **Integer**| Queue ID |
+ **data** | [**CreateQueueParams**](CreateQueueParams.md)| Queue data | [optional]
 
 ### Return type
 

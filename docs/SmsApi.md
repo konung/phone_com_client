@@ -1,4 +1,4 @@
-# SwaggerClient::SmsApi
+# PhoneComClient::SmsApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -20,27 +20,27 @@ Send a SMS to one or a group of recipients. For details on the input fields, see
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::SmsApi.new
+api_instance = PhoneComClient::SmsApi.new
 
 account_id = 56 # Integer | Account ID
 
-data = SwaggerClient::CreateSmsParams.new # CreateSmsParams | SMS data
+data = PhoneComClient::CreateSmsParams.new # CreateSmsParams | SMS data
 
 
 begin
   #Send a SMS to one or a group of recipients.
   result = api_instance.create_account_sms(account_id, data)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling SmsApi->create_account_sms: #{e}"
 end
 ```
@@ -49,8 +49,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **data** | [**CreateSmsParams**](CreateSmsParams.md)| SMS data | 
+ **account_id** | **Integer**| Account ID |
+ **data** | [**CreateSmsParams**](CreateSmsParams.md)| SMS data |
 
 ### Return type
 
@@ -77,16 +77,16 @@ This service shows the details of an individual SMS. See Intro to SMS for more i
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::SmsApi.new
+api_instance = PhoneComClient::SmsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -97,7 +97,7 @@ begin
   #This service shows the details of an individual SMS.
   result = api_instance.get_account_sms(account_id, sms_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling SmsApi->get_account_sms: #{e}"
 end
 ```
@@ -106,8 +106,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **sms_id** | **String**| SMS ID | 
+ **account_id** | **Integer**| Account ID |
+ **sms_id** | **String**| SMS ID |
 
 ### Return type
 
@@ -134,20 +134,20 @@ Get a list of SMS messages for an account. See Intro to SMS for more info on the
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::SmsApi.new
+api_instance = PhoneComClient::SmsApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   filters_from: 'filters_from_example', # String | Caller ID filter
   filters_to: 'filters_to_example', # String | Callee ID filter, the E.164 phone number to send the SMS TO. Note you must encode the + as %2B
@@ -165,7 +165,7 @@ begin
   #Get a list of SMS messages for an account.
   result = api_instance.list_account_sms(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling SmsApi->list_account_sms: #{e}"
 end
 ```
@@ -174,18 +174,18 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **filters_from** | **String**| Caller ID filter | [optional] 
- **filters_to** | **String**| Callee ID filter, the E.164 phone number to send the SMS TO. Note you must encode the + as %2B | [optional] 
- **filters_direction** | **String**| Direction filter | [optional] 
- **filters_extension** | [**Array&lt;String&gt;**](String.md)| Extension filter | [optional] 
- **filters_created_at** | **String**| Date string representing the UTC time that sms was created | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **sort_created_at** | **String**| Sort by created time of message | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **filters_from** | **String**| Caller ID filter | [optional]
+ **filters_to** | **String**| Callee ID filter, the E.164 phone number to send the SMS TO. Note you must encode the + as %2B | [optional]
+ **filters_direction** | **String**| Direction filter | [optional]
+ **filters_extension** | [**Array&lt;String&gt;**](String.md)| Extension filter | [optional]
+ **filters_created_at** | **String**| Date string representing the UTC time that sms was created | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **sort_created_at** | **String**| Sort by created time of message | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 
@@ -212,30 +212,30 @@ Update the is_new parameter in a sms record. See Account SMS for more info on th
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::SmsApi.new
+api_instance = PhoneComClient::SmsApi.new
 
 account_id = 56 # Integer | Account ID
 
 sms_id = 'sms_id_example' # String | SMS ID
 
-opts = { 
-  data: SwaggerClient::PatchSmsParams.new # PatchSmsParams | Sms data
+opts = {
+  data: PhoneComClient::PatchSmsParams.new # PatchSmsParams | Sms data
 }
 
 begin
   #Update the is_new parameter in a sms record.
   result = api_instance.patch_account_sms(account_id, sms_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling SmsApi->patch_account_sms: #{e}"
 end
 ```
@@ -244,9 +244,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **sms_id** | **String**| SMS ID | 
- **data** | [**PatchSmsParams**](PatchSmsParams.md)| Sms data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **sms_id** | **String**| SMS ID |
+ **data** | [**PatchSmsParams**](PatchSmsParams.md)| Sms data | [optional]
 
 ### Return type
 

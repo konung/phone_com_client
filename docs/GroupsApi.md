@@ -1,4 +1,4 @@
-# SwaggerClient::GroupsApi
+# PhoneComClient::GroupsApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -21,29 +21,29 @@ Add a new contact group to an account extension. See Account Contact Groups for 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = PhoneComClient::GroupsApi.new
 
 account_id = 56 # Integer | Account ID
 
 extension_id = 56 # Integer | Extension ID
 
-data = SwaggerClient::CreateGroupParams.new # CreateGroupParams | Group data
+data = PhoneComClient::CreateGroupParams.new # CreateGroupParams | Group data
 
 
 begin
   #Add a new contact group to an account extension.
   result = api_instance.create_account_extension_contact_group(account_id, extension_id, data)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling GroupsApi->create_account_extension_contact_group: #{e}"
 end
 ```
@@ -52,9 +52,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **extension_id** | **Integer**| Extension ID | 
- **data** | [**CreateGroupParams**](CreateGroupParams.md)| Group data | 
+ **account_id** | **Integer**| Account ID |
+ **extension_id** | **Integer**| Extension ID |
+ **data** | [**CreateGroupParams**](CreateGroupParams.md)| Group data |
 
 ### Return type
 
@@ -81,16 +81,16 @@ Delete a contact group from the address book. See Account Contact Groups for det
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = PhoneComClient::GroupsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -103,7 +103,7 @@ begin
   #Delete a contact group from the address book.
   result = api_instance.delete_account_extension_contact_group(account_id, extension_id, group_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling GroupsApi->delete_account_extension_contact_group: #{e}"
 end
 ```
@@ -112,9 +112,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **extension_id** | **Integer**| Extension ID | 
- **group_id** | **Integer**| Group ID | 
+ **account_id** | **Integer**| Account ID |
+ **extension_id** | **Integer**| Extension ID |
+ **group_id** | **Integer**| Group ID |
 
 ### Return type
 
@@ -141,16 +141,16 @@ Retrieve the information of a contact group. See Account Contact Groups for deta
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = PhoneComClient::GroupsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -163,7 +163,7 @@ begin
   #Retrieve the information of a contact group.
   result = api_instance.get_account_extension_contact_group(account_id, extension_id, group_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling GroupsApi->get_account_extension_contact_group: #{e}"
 end
 ```
@@ -172,9 +172,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **extension_id** | **Integer**| Extension ID | 
- **group_id** | **Integer**| Group ID | 
+ **account_id** | **Integer**| Account ID |
+ **extension_id** | **Integer**| Extension ID |
+ **group_id** | **Integer**| Group ID |
 
 ### Return type
 
@@ -201,22 +201,22 @@ Show a list of contact groups belonging to an extension. See Account Contact Gro
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = PhoneComClient::GroupsApi.new
 
 account_id = 56 # Integer | Account ID
 
 extension_id = 56 # Integer | Extension ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   filters_name: ['filters_name_example'], # Array<String> | Name filter
   sort_id: 'sort_id_example', # String | ID sorting
@@ -230,7 +230,7 @@ begin
   #Show a list of contact groups belonging to an extension.
   result = api_instance.list_account_extension_contact_groups(account_id, extension_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling GroupsApi->list_account_extension_contact_groups: #{e}"
 end
 ```
@@ -239,15 +239,15 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **extension_id** | **Integer**| Extension ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **sort_name** | **String**| Name sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **extension_id** | **Integer**| Extension ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **sort_name** | **String**| Name sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 
@@ -274,16 +274,16 @@ Update the information of a contact group. See Account Contact Groups for detail
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::GroupsApi.new
+api_instance = PhoneComClient::GroupsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -291,14 +291,14 @@ extension_id = 56 # Integer | Extension ID
 
 group_id = 56 # Integer | Group ID
 
-data = SwaggerClient::CreateGroupParams.new # CreateGroupParams | Group data
+data = PhoneComClient::CreateGroupParams.new # CreateGroupParams | Group data
 
 
 begin
   #Update the information of a contact group.
   result = api_instance.replace_account_extension_contact_group(account_id, extension_id, group_iddata)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling GroupsApi->replace_account_extension_contact_group: #{e}"
 end
 ```
@@ -307,10 +307,10 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **extension_id** | **Integer**| Extension ID | 
- **group_id** | **Integer**| Group ID | 
- **data** | [**CreateGroupParams**](CreateGroupParams.md)| Group data | 
+ **account_id** | **Integer**| Account ID |
+ **extension_id** | **Integer**| Extension ID |
+ **group_id** | **Integer**| Group ID |
+ **data** | [**CreateGroupParams**](CreateGroupParams.md)| Group data |
 
 ### Return type
 

@@ -1,4 +1,4 @@
-# SwaggerClient::TrunksApi
+# PhoneComClient::TrunksApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -21,27 +21,27 @@ Add a trunk record with SIP information. See Account Trunks for more info on the
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::TrunksApi.new
+api_instance = PhoneComClient::TrunksApi.new
 
 account_id = 56 # Integer | Account ID
 
-data = SwaggerClient::CreateTrunkParams.new # CreateTrunkParams | Trunk data
+data = PhoneComClient::CreateTrunkParams.new # CreateTrunkParams | Trunk data
 
 
 begin
   #Add a trunk record with SIP information.
   result = api_instance.create_account_trunk(account_id, data)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling TrunksApi->create_account_trunk: #{e}"
 end
 ```
@@ -50,8 +50,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **data** | [**CreateTrunkParams**](CreateTrunkParams.md)| Trunk data | 
+ **account_id** | **Integer**| Account ID |
+ **data** | [**CreateTrunkParams**](CreateTrunkParams.md)| Trunk data |
 
 ### Return type
 
@@ -78,16 +78,16 @@ Delete a trunk from account. See Account Trunks for more info on the properties.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::TrunksApi.new
+api_instance = PhoneComClient::TrunksApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -98,7 +98,7 @@ begin
   #Delete a trunk from account.
   result = api_instance.delete_account_trunk(account_id, trunk_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling TrunksApi->delete_account_trunk: #{e}"
 end
 ```
@@ -107,8 +107,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **trunk_id** | **Integer**| Trunk ID | 
+ **account_id** | **Integer**| Account ID |
+ **trunk_id** | **Integer**| Trunk ID |
 
 ### Return type
 
@@ -135,16 +135,16 @@ Show details of an individual trunk. See Account Trunks for more info on the pro
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::TrunksApi.new
+api_instance = PhoneComClient::TrunksApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -155,7 +155,7 @@ begin
   #Show details of an individual trunk.
   result = api_instance.get_account_trunk(account_id, trunk_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling TrunksApi->get_account_trunk: #{e}"
 end
 ```
@@ -164,8 +164,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **trunk_id** | **Integer**| Trunk ID | 
+ **account_id** | **Integer**| Account ID |
+ **trunk_id** | **Integer**| Trunk ID |
 
 ### Return type
 
@@ -192,20 +192,20 @@ Get a list of trunks for an account. See Account Trunks for more info on the pro
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::TrunksApi.new
+api_instance = PhoneComClient::TrunksApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   filters_name: ['filters_name_example'], # Array<String> | Name filter
   sort_id: 'sort_id_example', # String | ID sorting
@@ -219,7 +219,7 @@ begin
   #Get a list of trunks for an account.
   result = api_instance.list_account_trunks(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling TrunksApi->list_account_trunks: #{e}"
 end
 ```
@@ -228,14 +228,14 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **sort_name** | **String**| Name sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **sort_name** | **String**| Name sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 
@@ -262,29 +262,29 @@ Replace parameters in a trunk. See Account Trunks for more info on the propertie
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::TrunksApi.new
+api_instance = PhoneComClient::TrunksApi.new
 
 account_id = 56 # Integer | Account ID
 
 trunk_id = 56 # Integer | Trunk ID
 
-data = SwaggerClient::CreateTrunkParams.new # CreateTrunkParams | Trunk data
+data = PhoneComClient::CreateTrunkParams.new # CreateTrunkParams | Trunk data
 
 
 begin
   #Replace parameters in a trunk.
   result = api_instance.replace_account_trunk(account_id, trunk_iddata)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling TrunksApi->replace_account_trunk: #{e}"
 end
 ```
@@ -293,9 +293,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **trunk_id** | **Integer**| Trunk ID | 
- **data** | [**CreateTrunkParams**](CreateTrunkParams.md)| Trunk data | 
+ **account_id** | **Integer**| Account ID |
+ **trunk_id** | **Integer**| Trunk ID |
+ **data** | [**CreateTrunkParams**](CreateTrunkParams.md)| Trunk data |
 
 ### Return type
 

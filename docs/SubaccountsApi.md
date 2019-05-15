@@ -1,4 +1,4 @@
-# SwaggerClient::SubaccountsApi
+# PhoneComClient::SubaccountsApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -18,27 +18,27 @@ Add a subaccount for the authenticated user or client
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::SubaccountsApi.new
+api_instance = PhoneComClient::SubaccountsApi.new
 
 account_id = 56 # Integer | Account ID
 
-data = SwaggerClient::CreateSubaccountParams.new # CreateSubaccountParams | Subaccount data
+data = PhoneComClient::CreateSubaccountParams.new # CreateSubaccountParams | Subaccount data
 
 
 begin
   #Add a subaccount for the authenticated user or client
   result = api_instance.create_account_subaccount(account_id, data)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling SubaccountsApi->create_account_subaccount: #{e}"
 end
 ```
@@ -47,8 +47,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **data** | [**CreateSubaccountParams**](CreateSubaccountParams.md)| Subaccount data | 
+ **account_id** | **Integer**| Account ID |
+ **data** | [**CreateSubaccountParams**](CreateSubaccountParams.md)| Subaccount data |
 
 ### Return type
 
@@ -75,20 +75,20 @@ Get a list of subaccounts for the authenticated user or client
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::SubaccountsApi.new
+api_instance = PhoneComClient::SubaccountsApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   sort_id: 'sort_id_example', # String | ID sorting
   limit: 56, # Integer | Max results
@@ -100,7 +100,7 @@ begin
   #Get a list of subaccounts for the authenticated user or client
   result = api_instance.list_account_subaccounts(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling SubaccountsApi->list_account_subaccounts: #{e}"
 end
 ```
@@ -109,12 +109,12 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 

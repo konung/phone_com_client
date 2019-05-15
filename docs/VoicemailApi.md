@@ -1,4 +1,4 @@
-# SwaggerClient::VoicemailApi
+# PhoneComClient::VoicemailApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -19,16 +19,16 @@ This service shows the details of an individual voicemail. See Intro to Voicemai
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::VoicemailApi.new
+api_instance = PhoneComClient::VoicemailApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -39,7 +39,7 @@ begin
   #This service shows the details of an individual voicemail.
   result = api_instance.get_account_voicemail(account_id, voicemail_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling VoicemailApi->get_account_voicemail: #{e}"
 end
 ```
@@ -48,8 +48,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **voicemail_id** | **String**| Voicemail ID | 
+ **account_id** | **Integer**| Account ID |
+ **voicemail_id** | **String**| Voicemail ID |
 
 ### Return type
 
@@ -76,24 +76,24 @@ Get a list of voicemail messages for an account. See Intro to Voicemail for more
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::VoicemailApi.new
+api_instance = PhoneComClient::VoicemailApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   filters_from: 'filters_from_example', # String | Caller ID filter
   filters_to: 'filters_to_example', # String | Callee ID filter, the E.164 phone number to send the SMS TO. Note you must encode the + as %2B
-  filters_is_new: true, # BOOLEAN | 
+  filters_is_new: true, # BOOLEAN |
   filters_created_at: 'filters_created_at_example', # String | Date string representing the UTC time that sms was created
   filters_extension: ['filters_extension_example'], # Array<String> | Extension filter
   sort_id: 'sort_id_example', # String | ID sorting
@@ -107,7 +107,7 @@ begin
   #Get a list of voicemail messages for an account.
   result = api_instance.list_account_voicemail(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling VoicemailApi->list_account_voicemail: #{e}"
 end
 ```
@@ -116,18 +116,18 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **filters_from** | **String**| Caller ID filter | [optional] 
- **filters_to** | **String**| Callee ID filter, the E.164 phone number to send the SMS TO. Note you must encode the + as %2B | [optional] 
- **filters_is_new** | **BOOLEAN**|  | [optional] 
- **filters_created_at** | **String**| Date string representing the UTC time that sms was created | [optional] 
- **filters_extension** | [**Array&lt;String&gt;**](String.md)| Extension filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **sort_created_at** | **String**| Sort by the UTC time that voicemail was created | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **filters_from** | **String**| Caller ID filter | [optional]
+ **filters_to** | **String**| Callee ID filter, the E.164 phone number to send the SMS TO. Note you must encode the + as %2B | [optional]
+ **filters_is_new** | **BOOLEAN**|  | [optional]
+ **filters_created_at** | **String**| Date string representing the UTC time that sms was created | [optional]
+ **filters_extension** | [**Array&lt;String&gt;**](String.md)| Extension filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **sort_created_at** | **String**| Sort by the UTC time that voicemail was created | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 
@@ -154,30 +154,30 @@ Update the is_new parameter in a voicemail record. See Account Voicemail for mor
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::VoicemailApi.new
+api_instance = PhoneComClient::VoicemailApi.new
 
 account_id = 56 # Integer | Account ID
 
 voicemail_id = 'voicemail_id_example' # String | Voicemail ID
 
-opts = { 
-  data: SwaggerClient::PatchVoicemailParams.new # PatchVoicemailParams | Payment data
+opts = {
+  data: PhoneComClient::PatchVoicemailParams.new # PatchVoicemailParams | Payment data
 }
 
 begin
   #Update the is_new parameter in a voicemail record.
   result = api_instance.patch_account_voicemail(account_id, voicemail_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling VoicemailApi->patch_account_voicemail: #{e}"
 end
 ```
@@ -186,9 +186,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **voicemail_id** | **String**| Voicemail ID | 
- **data** | [**PatchVoicemailParams**](PatchVoicemailParams.md)| Payment data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **voicemail_id** | **String**| Voicemail ID |
+ **data** | [**PatchVoicemailParams**](PatchVoicemailParams.md)| Payment data | [optional]
 
 ### Return type
 

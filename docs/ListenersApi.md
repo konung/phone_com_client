@@ -1,4 +1,4 @@
-# SwaggerClient::ListenersApi
+# PhoneComClient::ListenersApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -21,28 +21,28 @@ Add a listener object to your account that can be used to subscribe an event. Se
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ListenersApi.new
+api_instance = PhoneComClient::ListenersApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
-  data: SwaggerClient::CreateListenerParams.new # CreateListenerParams | Account Listeners Data
+opts = {
+  data: PhoneComClient::CreateListenerParams.new # CreateListenerParams | Account Listeners Data
 }
 
 begin
   #Add a listener object to your account that can be used to subscribe an event.
   result = api_instance.create_account_listener(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ListenersApi->create_account_listener: #{e}"
 end
 ```
@@ -51,8 +51,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **data** | [**CreateListenerParams**](CreateListenerParams.md)| Account Listeners Data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **data** | [**CreateListenerParams**](CreateListenerParams.md)| Account Listeners Data | [optional]
 
 ### Return type
 
@@ -79,16 +79,16 @@ Delete an individual event listener. See Account Listeners for more info on the 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ListenersApi.new
+api_instance = PhoneComClient::ListenersApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -99,7 +99,7 @@ begin
   #Delete an individual event listener.
   result = api_instance.delete_account_listener(account_id, listener_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ListenersApi->delete_account_listener: #{e}"
 end
 ```
@@ -108,8 +108,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **listener_id** | **Integer**| Listener ID | 
+ **account_id** | **Integer**| Account ID |
+ **listener_id** | **Integer**| Listener ID |
 
 ### Return type
 
@@ -136,16 +136,16 @@ Show details of an individual event listener. See Account Listeners for more inf
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ListenersApi.new
+api_instance = PhoneComClient::ListenersApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -156,7 +156,7 @@ begin
   #Show details of an individual listener.
   result = api_instance.get_account_listener(account_id, listener_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ListenersApi->get_account_listener: #{e}"
 end
 ```
@@ -165,8 +165,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **listener_id** | **Integer**| Listener ID | 
+ **account_id** | **Integer**| Account ID |
+ **listener_id** | **Integer**| Listener ID |
 
 ### Return type
 
@@ -193,20 +193,20 @@ Get a list of listeners for an account. See Account Listeners for more info on t
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ListenersApi.new
+api_instance = PhoneComClient::ListenersApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   sort_id: 'sort_id_example', # String | ID sorting
   limit: 56, # Integer | Max results
@@ -218,7 +218,7 @@ begin
   #Get a list of listeners for an account.
   result = api_instance.list_account_listeners(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ListenersApi->list_account_listeners: #{e}"
 end
 ```
@@ -227,12 +227,12 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 
@@ -259,30 +259,30 @@ Update the settings of an individual event listener. See Event Listeners for mor
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ListenersApi.new
+api_instance = PhoneComClient::ListenersApi.new
 
 account_id = 56 # Integer | Account ID
 
 listener_id = 56 # Integer | Listener ID
 
-opts = { 
-  data: SwaggerClient::CreateListenerParams.new # CreateListenerParams | Account Listeners Data
+opts = {
+  data: PhoneComClient::CreateListenerParams.new # CreateListenerParams | Account Listeners Data
 }
 
 begin
   #Update the settings of an individual event listener.
   result = api_instance.replace_account_listener(account_id, listener_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ListenersApi->replace_account_listener: #{e}"
 end
 ```
@@ -291,9 +291,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **listener_id** | **Integer**| Listener ID | 
- **data** | [**CreateListenerParams**](CreateListenerParams.md)| Account Listeners Data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **listener_id** | **Integer**| Listener ID |
+ **data** | [**CreateListenerParams**](CreateListenerParams.md)| Account Listeners Data | [optional]
 
 ### Return type
 

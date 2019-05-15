@@ -1,4 +1,4 @@
-# SwaggerClient::SubaccountPricingApi
+# PhoneComClient::SubaccountPricingApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -20,29 +20,29 @@ Add a pricing plan to a subaccount. See Account Subaccount Pricing for more info
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::SubaccountPricingApi.new
+api_instance = PhoneComClient::SubaccountPricingApi.new
 
 account_id = 56 # Integer | Account ID
 
 subaccount_id = 56 # Integer | Subaccount ID
 
-data = SwaggerClient::CreatePricingParams.new # CreatePricingParams | Subaccount pricing data
+data = PhoneComClient::CreatePricingParams.new # CreatePricingParams | Subaccount pricing data
 
 
 begin
   #Add a pricing plan to a subaccount.
   result = api_instance.create_account_subaccount_pricing(account_id, subaccount_id, data)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling SubaccountPricingApi->create_account_subaccount_pricing: #{e}"
 end
 ```
@@ -51,9 +51,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **subaccount_id** | **Integer**| Subaccount ID | 
- **data** | [**CreatePricingParams**](CreatePricingParams.md)| Subaccount pricing data | 
+ **account_id** | **Integer**| Account ID |
+ **subaccount_id** | **Integer**| Subaccount ID |
+ **data** | [**CreatePricingParams**](CreatePricingParams.md)| Subaccount pricing data |
 
 ### Return type
 
@@ -80,16 +80,16 @@ Delete a pricing plan from a subaccount. See Account Subaccount Pricing for more
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::SubaccountPricingApi.new
+api_instance = PhoneComClient::SubaccountPricingApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -102,7 +102,7 @@ begin
   #Delete a pricing plan from a subaccount.
   result = api_instance.delete_account_subaccount_pricing(account_id, subaccount_id, pricing_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling SubaccountPricingApi->delete_account_subaccount_pricing: #{e}"
 end
 ```
@@ -111,9 +111,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **subaccount_id** | **Integer**| Subaccount ID | 
- **pricing_id** | **Integer**| Pricing Object ID | 
+ **account_id** | **Integer**| Account ID |
+ **subaccount_id** | **Integer**| Subaccount ID |
+ **pricing_id** | **Integer**| Pricing Object ID |
 
 ### Return type
 
@@ -140,16 +140,16 @@ Get the details of a pricing plan for a subaccount. See Account Subaccount Prici
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::SubaccountPricingApi.new
+api_instance = PhoneComClient::SubaccountPricingApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -162,7 +162,7 @@ begin
   #Get the details of a pricing plan for a subaccount.
   result = api_instance.get_account_subaccount_pricing(account_id, subaccount_id, pricing_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling SubaccountPricingApi->get_account_subaccount_pricing: #{e}"
 end
 ```
@@ -171,9 +171,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **subaccount_id** | **Integer**| Subaccount ID | 
- **pricing_id** | **Integer**| Pricing Object ID | 
+ **account_id** | **Integer**| Account ID |
+ **subaccount_id** | **Integer**| Subaccount ID |
+ **pricing_id** | **Integer**| Pricing Object ID |
 
 ### Return type
 
@@ -200,22 +200,22 @@ Get a list of pricing plans for a subaccount. See Account Subaccount Pricing for
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::SubaccountPricingApi.new
+api_instance = PhoneComClient::SubaccountPricingApi.new
 
 account_id = 56 # Integer | Account ID
 
 subaccount_id = 56 # Integer | Subaccount ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   sort_id: 'sort_id_example', # String | ID sorting
   limit: 56, # Integer | Max results
@@ -227,7 +227,7 @@ begin
   #Get a list of pricing plans for a subaccount.
   result = api_instance.list_account_subaccount_pricing(account_id, subaccount_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling SubaccountPricingApi->list_account_subaccount_pricing: #{e}"
 end
 ```
@@ -236,13 +236,13 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **subaccount_id** | **Integer**| Subaccount ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **subaccount_id** | **Integer**| Subaccount ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 

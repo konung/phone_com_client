@@ -1,4 +1,4 @@
-# SwaggerClient::RoutesApi
+# PhoneComClient::RoutesApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -21,28 +21,28 @@ Add a new route to the account. See Intro to Routes for more info on the propert
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::RoutesApi.new
+api_instance = PhoneComClient::RoutesApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
-  data: SwaggerClient::CreateRouteParams.new # CreateRouteParams | Route data
+opts = {
+  data: PhoneComClient::CreateRouteParams.new # CreateRouteParams | Route data
 }
 
 begin
   #Add a new route to the account.
   result = api_instance.create_route(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling RoutesApi->create_route: #{e}"
 end
 ```
@@ -51,8 +51,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **data** | [**CreateRouteParams**](CreateRouteParams.md)| Route data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **data** | [**CreateRouteParams**](CreateRouteParams.md)| Route data | [optional]
 
 ### Return type
 
@@ -79,16 +79,16 @@ Delete a route from the account. See Intro to Routes for more info on the proper
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::RoutesApi.new
+api_instance = PhoneComClient::RoutesApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -99,7 +99,7 @@ begin
   #Delete a route from the account.
   result = api_instance.delete_account_route(account_id, route_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling RoutesApi->delete_account_route: #{e}"
 end
 ```
@@ -108,8 +108,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **route_id** | **Integer**| Route ID | 
+ **account_id** | **Integer**| Account ID |
+ **route_id** | **Integer**| Route ID |
 
 ### Return type
 
@@ -136,16 +136,16 @@ Show details of an individual route. See Intro to Routes for more info on the pr
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::RoutesApi.new
+api_instance = PhoneComClient::RoutesApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -156,7 +156,7 @@ begin
   #Show details of an individual route.
   result = api_instance.get_account_route(account_id, route_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling RoutesApi->get_account_route: #{e}"
 end
 ```
@@ -165,8 +165,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **route_id** | **Integer**| Route ID | 
+ **account_id** | **Integer**| Account ID |
+ **route_id** | **Integer**| Route ID |
 
 ### Return type
 
@@ -193,20 +193,20 @@ Get a list of routes for an account. See Intro to Routes for more info on the pr
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::RoutesApi.new
+api_instance = PhoneComClient::RoutesApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   filters_name: ['filters_name_example'], # Array<String> | Name filter
   sort_id: 'sort_id_example', # String | ID sorting
@@ -220,7 +220,7 @@ begin
   #Get a list of routes for an account.
   result = api_instance.list_account_routes(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling RoutesApi->list_account_routes: #{e}"
 end
 ```
@@ -229,14 +229,14 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **sort_name** | **String**| Name sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **sort_name** | **String**| Name sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 
@@ -263,30 +263,30 @@ Update the information of a route. See Intro to Routes for more info on the prop
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::RoutesApi.new
+api_instance = PhoneComClient::RoutesApi.new
 
 account_id = 56 # Integer | Account ID
 
 route_id = 56 # Integer | Route ID
 
-opts = { 
-  data: SwaggerClient::CreateRouteParams.new # CreateRouteParams | Route data
+opts = {
+  data: PhoneComClient::CreateRouteParams.new # CreateRouteParams | Route data
 }
 
 begin
   #Update the information of a route.
   result = api_instance.replace_account_route(account_id, route_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling RoutesApi->replace_account_route: #{e}"
 end
 ```
@@ -295,9 +295,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **route_id** | **Integer**| Route ID | 
- **data** | [**CreateRouteParams**](CreateRouteParams.md)| Route data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **route_id** | **Integer**| Route ID |
+ **data** | [**CreateRouteParams**](CreateRouteParams.md)| Route data | [optional]
 
 ### Return type
 

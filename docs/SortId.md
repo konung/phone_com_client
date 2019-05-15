@@ -1,8 +1,8 @@
-# SwaggerClient::SortId
+# PhoneComClient::SortId
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
+**id** | **String** |  | [optional]
 
 

@@ -1,4 +1,4 @@
-# SwaggerClient::DefaultApi
+# PhoneComClient::DefaultApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -17,22 +17,22 @@ The default API command
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::DefaultApi.new
+api_instance = PhoneComClient::DefaultApi.new
 
 begin
   #The default API command
   result = api_instance.ping
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling DefaultApi->ping: #{e}"
 end
 ```

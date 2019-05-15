@@ -1,4 +1,4 @@
-# SwaggerClient::MenusApi
+# PhoneComClient::MenusApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -21,28 +21,28 @@ Create an individual menu. See Account Menus for more info on the properties.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::MenusApi.new
+api_instance = PhoneComClient::MenusApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
-  data: SwaggerClient::CreateMenuParams.new # CreateMenuParams | Menu data
+opts = {
+  data: PhoneComClient::CreateMenuParams.new # CreateMenuParams | Menu data
 }
 
 begin
   #Create an individual menu.
   result = api_instance.create_account_menu(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling MenusApi->create_account_menu: #{e}"
 end
 ```
@@ -51,8 +51,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **data** | [**CreateMenuParams**](CreateMenuParams.md)| Menu data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **data** | [**CreateMenuParams**](CreateMenuParams.md)| Menu data | [optional]
 
 ### Return type
 
@@ -79,16 +79,16 @@ Delete an individual menu. See Account Menus for more info on the properties.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::MenusApi.new
+api_instance = PhoneComClient::MenusApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -99,7 +99,7 @@ begin
   #Delete an individual menu.
   result = api_instance.delete_account_menu(account_id, menu_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling MenusApi->delete_account_menu: #{e}"
 end
 ```
@@ -108,8 +108,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **menu_id** | **Integer**| Menu ID | 
+ **account_id** | **Integer**| Account ID |
+ **menu_id** | **Integer**| Menu ID |
 
 ### Return type
 
@@ -136,16 +136,16 @@ Show details of an individual menu. See Account Menus for more info on the prope
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::MenusApi.new
+api_instance = PhoneComClient::MenusApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -156,7 +156,7 @@ begin
   #Show details of an individual menu.
   result = api_instance.get_account_menu(account_id, menu_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling MenusApi->get_account_menu: #{e}"
 end
 ```
@@ -165,8 +165,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **menu_id** | **Integer**| Menu ID | 
+ **account_id** | **Integer**| Account ID |
+ **menu_id** | **Integer**| Menu ID |
 
 ### Return type
 
@@ -193,20 +193,20 @@ Get a list of menus for an account. See Account Menus for more info on the prope
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::MenusApi.new
+api_instance = PhoneComClient::MenusApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   filters_name: ['filters_name_example'], # Array<String> | Name filter
   sort_id: 'sort_id_example', # String | ID sorting
@@ -220,7 +220,7 @@ begin
   #Get a list of menus for an account.
   result = api_instance.list_account_menus(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling MenusApi->list_account_menus: #{e}"
 end
 ```
@@ -229,14 +229,14 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **sort_name** | **String**| Name sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **sort_name** | **String**| Name sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 
@@ -263,30 +263,30 @@ Replace an individual menu. See Account Menus for more info on the properties.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::MenusApi.new
+api_instance = PhoneComClient::MenusApi.new
 
 account_id = 56 # Integer | Account ID
 
 menu_id = 56 # Integer | Menu ID
 
-opts = { 
-  data: SwaggerClient::ReplaceMenuParams.new # ReplaceMenuParams | Menu data
+opts = {
+  data: PhoneComClient::ReplaceMenuParams.new # ReplaceMenuParams | Menu data
 }
 
 begin
   #Replace an individual menu.
   result = api_instance.replace_account_menu(account_id, menu_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling MenusApi->replace_account_menu: #{e}"
 end
 ```
@@ -295,9 +295,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **menu_id** | **Integer**| Menu ID | 
- **data** | [**ReplaceMenuParams**](ReplaceMenuParams.md)| Menu data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **menu_id** | **Integer**| Menu ID |
+ **data** | [**ReplaceMenuParams**](ReplaceMenuParams.md)| Menu data | [optional]
 
 ### Return type
 

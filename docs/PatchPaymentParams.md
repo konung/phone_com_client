@@ -1,8 +1,8 @@
-# SwaggerClient::PatchPaymentParams
+# PhoneComClient::PatchPaymentParams
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **String** | primary, onfile or hidden | [optional] 
+**status** | **String** | primary, onfile or hidden | [optional]
 
 

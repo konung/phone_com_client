@@ -1,4 +1,4 @@
-# SwaggerClient::CallLogsApi
+# PhoneComClient::CallLogsApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -18,16 +18,16 @@ Show details of an individual Call Log entry. See Call Logs for more detail.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::CallLogsApi.new
+api_instance = PhoneComClient::CallLogsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -38,7 +38,7 @@ begin
   #Show details of an individual Call Log entry
   result = api_instance.get_account_call_logs(account_id, call_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling CallLogsApi->get_account_call_logs: #{e}"
 end
 ```
@@ -47,8 +47,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **call_id** | **String**| Call ID | 
+ **account_id** | **Integer**| Account ID |
+ **call_id** | **String**| Call ID |
 
 ### Return type
 
@@ -75,20 +75,20 @@ Get a list of call details associated with your account. See Call Logs for more 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::CallLogsApi.new
+api_instance = PhoneComClient::CallLogsApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   filters_start_time: ['filters_start_time_example'], # Array<String> | Call start time filter
   filters_created_at: 'filters_created_at_example', # String | Call log creation time filter
@@ -108,7 +108,7 @@ begin
   #Get a list of call details associated with your account
   result = api_instance.list_account_call_logs(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling CallLogsApi->list_account_call_logs: #{e}"
 end
 ```
@@ -117,20 +117,20 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **filters_start_time** | [**Array&lt;String&gt;**](String.md)| Call start time filter | [optional] 
- **filters_created_at** | **String**| Call log creation time filter | [optional] 
- **filters_direction** | **String**| Call direction filter: in or out | [optional] 
- **filters_called_number** | **String**| Called number | [optional] 
- **filters_type** | **String**| Call type, such as &#39;call&#39;, &#39;fax&#39;, &#39;audiogram&#39; | [optional] 
- **filters_extension** | [**Array&lt;String&gt;**](String.md)| Extension filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **sort_start_time** | **String**| Sorting by call start time: asc or desc | [optional] 
- **sort_created_at** | **String**| Sorting by call log creation time: asc or desc | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **filters_start_time** | [**Array&lt;String&gt;**](String.md)| Call start time filter | [optional]
+ **filters_created_at** | **String**| Call log creation time filter | [optional]
+ **filters_direction** | **String**| Call direction filter: in or out | [optional]
+ **filters_called_number** | **String**| Called number | [optional]
+ **filters_type** | **String**| Call type, such as &#39;call&#39;, &#39;fax&#39;, &#39;audiogram&#39; | [optional]
+ **filters_extension** | [**Array&lt;String&gt;**](String.md)| Extension filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **sort_start_time** | **String**| Sorting by call start time: asc or desc | [optional]
+ **sort_created_at** | **String**| Sorting by call log creation time: asc or desc | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 

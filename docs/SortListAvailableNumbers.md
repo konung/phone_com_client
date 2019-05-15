@@ -1,10 +1,10 @@
-# SwaggerClient::SortListAvailableNumbers
+# PhoneComClient::SortListAvailableNumbers
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**internal** | **String** |  | [optional] 
-**price** | **String** |  | [optional] 
-**phone_number** | **String** |  | [optional] 
+**internal** | **String** |  | [optional]
+**price** | **String** |  | [optional]
+**phone_number** | **String** |  | [optional]
 
 

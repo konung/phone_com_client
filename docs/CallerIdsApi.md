@@ -1,4 +1,4 @@
-# SwaggerClient::CallerIdsApi
+# PhoneComClient::CallerIdsApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -17,22 +17,22 @@ Show the Caller ID options a given extension can use. See Intro to Caller IDs fo
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::CallerIdsApi.new
+api_instance = PhoneComClient::CallerIdsApi.new
 
 account_id = 56 # Integer | Account ID
 
 extension_id = 56 # Integer | Extension ID
 
-opts = { 
+opts = {
   filters_number: ['filters_number_example'], # Array<String> | Number filter
   filters_name: ['filters_name_example'], # Array<String> | Name filter
   sort_number: 'sort_number_example', # String | Number sorting
@@ -46,7 +46,7 @@ begin
   #Show the Caller ID options a given extension can use.
   result = api_instance.get_caller_ids(account_id, extension_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling CallerIdsApi->get_caller_ids: #{e}"
 end
 ```
@@ -55,15 +55,15 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **extension_id** | **Integer**| Extension ID | 
- **filters_number** | [**Array&lt;String&gt;**](String.md)| Number filter | [optional] 
- **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional] 
- **sort_number** | **String**| Number sorting | [optional] 
- **sort_name** | **String**| Name sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **extension_id** | **Integer**| Extension ID |
+ **filters_number** | [**Array&lt;String&gt;**](String.md)| Number filter | [optional]
+ **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional]
+ **sort_number** | **String**| Number sorting | [optional]
+ **sort_name** | **String**| Name sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 

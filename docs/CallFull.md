@@ -1,8 +1,8 @@
-# SwaggerClient::CallFull
+# PhoneComClient::CallFull
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
+**id** | **String** |  | [optional]
 
 

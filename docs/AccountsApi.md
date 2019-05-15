@@ -1,4 +1,4 @@
-# SwaggerClient::AccountsApi
+# PhoneComClient::AccountsApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -18,16 +18,16 @@ Retrieve details of an individual account. See Accounts for more info on the pro
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::AccountsApi.new
+api_instance = PhoneComClient::AccountsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -36,7 +36,7 @@ begin
   #Retrieve details of an individual account
   result = api_instance.get_account(account_id, )
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling AccountsApi->get_account: #{e}"
 end
 ```
@@ -45,7 +45,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
+ **account_id** | **Integer**| Account ID |
 
 ### Return type
 
@@ -72,18 +72,18 @@ Get a list of accounts visible to the authenticated user or client. In most case
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::AccountsApi.new
+api_instance = PhoneComClient::AccountsApi.new
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   sort_id: 'sort_id_example', # String | ID sorting
   limit: 56, # Integer | Max results
@@ -95,7 +95,7 @@ begin
   #Get a list of accounts visible to the authenticated user or client.
   result = api_instance.list_accounts(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling AccountsApi->list_accounts: #{e}"
 end
 ```
@@ -104,11 +104,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 

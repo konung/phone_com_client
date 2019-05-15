@@ -1,9 +1,9 @@
-# SwaggerClient::FilterIdNameArray
+# PhoneComClient::FilterIdNameArray
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
-**name** | **String** |  | [optional] 
+**id** | **String** |  | [optional]
+**name** | **String** |  | [optional]
 
 

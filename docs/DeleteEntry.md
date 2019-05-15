@@ -1,8 +1,8 @@
-# SwaggerClient::DeleteEntry
+# PhoneComClient::DeleteEntry
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**success** | **BOOLEAN** |  | [optional] 
+**success** | **BOOLEAN** |  | [optional]
 
 

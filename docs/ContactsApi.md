@@ -1,4 +1,4 @@
-# SwaggerClient::ContactsApi
+# PhoneComClient::ContactsApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -21,30 +21,30 @@ Add a new address book contact for an extension. See Account Contacts for more i
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ContactsApi.new
+api_instance = PhoneComClient::ContactsApi.new
 
 account_id = 56 # Integer | Account ID
 
 extension_id = 56 # Integer | Extension ID
 
-opts = { 
-  data: SwaggerClient::CreateContactParams.new # CreateContactParams | Contact data
+opts = {
+  data: PhoneComClient::CreateContactParams.new # CreateContactParams | Contact data
 }
 
 begin
   #Add a new address book contact for an extension.
   result = api_instance.create_account_extension_contact(account_id, extension_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ContactsApi->create_account_extension_contact: #{e}"
 end
 ```
@@ -53,9 +53,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **extension_id** | **Integer**| Extension ID | 
- **data** | [**CreateContactParams**](CreateContactParams.md)| Contact data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **extension_id** | **Integer**| Extension ID |
+ **data** | [**CreateContactParams**](CreateContactParams.md)| Contact data | [optional]
 
 ### Return type
 
@@ -82,16 +82,16 @@ Delete a contact from the address book. See Account Contacts for more info on th
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ContactsApi.new
+api_instance = PhoneComClient::ContactsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -104,7 +104,7 @@ begin
   #Delete a contact from the address book.
   result = api_instance.delete_account_extension_contact(account_id, extension_id, contact_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ContactsApi->delete_account_extension_contact: #{e}"
 end
 ```
@@ -113,9 +113,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **extension_id** | **Integer**| Extension ID | 
- **contact_id** | **Integer**| Contact ID | 
+ **account_id** | **Integer**| Account ID |
+ **extension_id** | **Integer**| Extension ID |
+ **contact_id** | **Integer**| Contact ID |
 
 ### Return type
 
@@ -142,16 +142,16 @@ Retrieve the details of an address book contact. See Account Contacts for more i
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ContactsApi.new
+api_instance = PhoneComClient::ContactsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -164,7 +164,7 @@ begin
   #Retrieve the details of an address book contact.
   result = api_instance.get_account_extension_contact(account_id, extension_id, contact_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ContactsApi->get_account_extension_contact: #{e}"
 end
 ```
@@ -173,9 +173,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **extension_id** | **Integer**| Extension ID | 
- **contact_id** | **Integer**| Contact ID | 
+ **account_id** | **Integer**| Account ID |
+ **extension_id** | **Integer**| Extension ID |
+ **contact_id** | **Integer**| Contact ID |
 
 ### Return type
 
@@ -202,22 +202,22 @@ Show the Caller ID options a given extension can use. See Intro to Caller IDs fo
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ContactsApi.new
+api_instance = PhoneComClient::ContactsApi.new
 
 account_id = 56 # Integer | Account ID
 
 extension_id = 56 # Integer | Extension ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   filters_group_id: ['filters_group_id_example'], # Array<String> | Group filter
   filters_updated_at: ['filters_updated_at_example'], # Array<String> | Updated At filter
@@ -232,7 +232,7 @@ begin
   #Show the Caller ID options a given extension can use.
   result = api_instance.list_account_extension_contacts(account_id, extension_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ContactsApi->list_account_extension_contacts: #{e}"
 end
 ```
@@ -241,16 +241,16 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **extension_id** | **Integer**| Extension ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **filters_group_id** | [**Array&lt;String&gt;**](String.md)| Group filter | [optional] 
- **filters_updated_at** | [**Array&lt;String&gt;**](String.md)| Updated At filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **sort_updated_at** | **String**| Updated At sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **extension_id** | **Integer**| Extension ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **filters_group_id** | [**Array&lt;String&gt;**](String.md)| Group filter | [optional]
+ **filters_updated_at** | [**Array&lt;String&gt;**](String.md)| Updated At filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **sort_updated_at** | **String**| Updated At sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 
@@ -277,16 +277,16 @@ Update the info of a contact in the address book. See Account Contacts for more 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ContactsApi.new
+api_instance = PhoneComClient::ContactsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -294,15 +294,15 @@ extension_id = 56 # Integer | Extension ID
 
 contact_id = 56 # Integer | Contact ID
 
-opts = { 
-  data: SwaggerClient::CreateContactParams.new # CreateContactParams | Contact data
+opts = {
+  data: PhoneComClient::CreateContactParams.new # CreateContactParams | Contact data
 }
 
 begin
   #Update the info of a contact in the address book.
   result = api_instance.replace_account_extension_contact(account_id, extension_id, contact_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ContactsApi->replace_account_extension_contact: #{e}"
 end
 ```
@@ -311,10 +311,10 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **extension_id** | **Integer**| Extension ID | 
- **contact_id** | **Integer**| Contact ID | 
- **data** | [**CreateContactParams**](CreateContactParams.md)| Contact data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **extension_id** | **Integer**| Extension ID |
+ **contact_id** | **Integer**| Contact ID |
+ **data** | [**CreateContactParams**](CreateContactParams.md)| Contact data | [optional]
 
 ### Return type
 

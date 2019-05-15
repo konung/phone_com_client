@@ -1,8 +1,8 @@
-# SwaggerClient::ScopeDetails
+# PhoneComClient::ScopeDetails
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**voip_id** | **Integer** |  | [optional] 
+**voip_id** | **Integer** |  | [optional]
 
 

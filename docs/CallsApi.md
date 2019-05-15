@@ -1,4 +1,4 @@
-# SwaggerClient::CallsApi
+# PhoneComClient::CallsApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -17,28 +17,28 @@ Make a phone call. See Calls for more details and how to setup caller id's. Note
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::CallsApi.new
+api_instance = PhoneComClient::CallsApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
-  data: SwaggerClient::CreateCallParams.new # CreateCallParams | Call data
+opts = {
+  data: PhoneComClient::CreateCallParams.new # CreateCallParams | Call data
 }
 
 begin
   #Make a phone call
   result = api_instance.create_account_call(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling CallsApi->create_account_call: #{e}"
 end
 ```
@@ -47,8 +47,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **data** | [**CreateCallParams**](CreateCallParams.md)| Call data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **data** | [**CreateCallParams**](CreateCallParams.md)| Call data | [optional]
 
 ### Return type
 

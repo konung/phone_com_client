@@ -1,4 +1,4 @@
-# SwaggerClient::OauthApi
+# PhoneComClient::OauthApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -19,26 +19,26 @@ To create an access token via the /oauth/access-token API, an API user may choos
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::OauthApi.new
+api_instance = PhoneComClient::OauthApi.new
 
-opts = { 
-  data: SwaggerClient::CreateOauthParams.new # CreateOauthParams | Oauth data
+opts = {
+  data: PhoneComClient::CreateOauthParams.new # CreateOauthParams | Oauth data
 }
 
 begin
   #To create an access token via the /oauth/access-token API, an API user may choose any one of the grant types it supports: Authorization Code Grant, Client Credential Grant, Password Credential Grant or Refresh Token Grant.
   result = api_instance.create_oauth_access_token(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling OauthApi->create_oauth_access_token: #{e}"
 end
 ```
@@ -47,7 +47,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**CreateOauthParams**](CreateOauthParams.md)| Oauth data | [optional] 
+ **data** | [**CreateOauthParams**](CreateOauthParams.md)| Oauth data | [optional]
 
 ### Return type
 
@@ -74,16 +74,16 @@ Create Authorization Code or Access Token. The /oauth/authorization API supports
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::OauthApi.new
+api_instance = PhoneComClient::OauthApi.new
 
 client_id = 'client_id_example' # String | Client ID
 
@@ -97,7 +97,7 @@ redirect_uri = 'redirect_uri_example' # String | The URL where the response data
 begin
   #Create Authorization Code or Access Token.
   api_instance.create_oauth_authorization(client_id, response_type, scope, redirect_uri)
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling OauthApi->create_oauth_authorization: #{e}"
 end
 ```
@@ -106,10 +106,10 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client_id** | **String**| Client ID | 
- **response_type** | **String**| &#39;token&#39; for Implicit Grant; &#39;code&#39; for Authorization Code Grant | 
- **scope** | **String**| account-owner, extension-user and/or methods:ALL, separated by space (%20) | 
- **redirect_uri** | **String**| The URL where the response data of this API is redirected to | 
+ **client_id** | **String**| Client ID |
+ **response_type** | **String**| &#39;token&#39; for Implicit Grant; &#39;code&#39; for Authorization Code Grant |
+ **scope** | **String**| account-owner, extension-user and/or methods:ALL, separated by space (%20) |
+ **redirect_uri** | **String**| The URL where the response data of this API is redirected to |
 
 ### Return type
 
@@ -136,22 +136,22 @@ Retrieve details of an access token, such as scope, expiration and extension ID.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::OauthApi.new
+api_instance = PhoneComClient::OauthApi.new
 
 begin
   #Retrieve details of an access token, such as scope, expiration and extension ID.
   result = api_instance.get_oauth_access_token
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling OauthApi->get_oauth_access_token: #{e}"
 end
 ```

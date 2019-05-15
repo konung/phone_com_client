@@ -1,4 +1,4 @@
-# SwaggerClient::DevicesApi
+# PhoneComClient::DevicesApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -21,28 +21,28 @@ Register a generic VoIP device. See Devices for more detail.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::DevicesApi.new
+api_instance = PhoneComClient::DevicesApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
-  data: SwaggerClient::CreateDeviceParams.new # CreateDeviceParams | Device data
+opts = {
+  data: PhoneComClient::CreateDeviceParams.new # CreateDeviceParams | Device data
 }
 
 begin
   #Register a generic VoIP device.
   result = api_instance.create_account_device(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling DevicesApi->create_account_device: #{e}"
 end
 ```
@@ -51,8 +51,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **data** | [**CreateDeviceParams**](CreateDeviceParams.md)| Device data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **data** | [**CreateDeviceParams**](CreateDeviceParams.md)| Device data | [optional]
 
 ### Return type
 
@@ -79,16 +79,16 @@ Delete a VoIP device. See Devices for more detail.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::DevicesApi.new
+api_instance = PhoneComClient::DevicesApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -99,7 +99,7 @@ begin
   #Delete a VoIP device.
   result = api_instance.delete_account_device(account_id, device_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling DevicesApi->delete_account_device: #{e}"
 end
 ```
@@ -108,8 +108,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **device_id** | **Integer**| Device ID | 
+ **account_id** | **Integer**| Account ID |
+ **device_id** | **Integer**| Device ID |
 
 ### Return type
 
@@ -136,16 +136,16 @@ Show details of an individual VoIP device. See Devices for more detail.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::DevicesApi.new
+api_instance = PhoneComClient::DevicesApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -156,7 +156,7 @@ begin
   #Show details of an individual VoIP device.
   result = api_instance.get_account_device(account_id, device_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling DevicesApi->get_account_device: #{e}"
 end
 ```
@@ -165,8 +165,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **device_id** | **Integer**| Device ID | 
+ **account_id** | **Integer**| Account ID |
+ **device_id** | **Integer**| Device ID |
 
 ### Return type
 
@@ -193,20 +193,20 @@ Get a list of VoIP devices associated with your account. See Devices for more de
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::DevicesApi.new
+api_instance = PhoneComClient::DevicesApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   filters_name: ['filters_name_example'], # Array<String> | Name filter
   sort_id: 'sort_id_example', # String | ID sorting
@@ -220,7 +220,7 @@ begin
   #Get a list of VoIP devices associated with your account.
   result = api_instance.list_account_devices(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling DevicesApi->list_account_devices: #{e}"
 end
 ```
@@ -229,14 +229,14 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **sort_name** | **String**| Name sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **sort_name** | **String**| Name sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 
@@ -263,30 +263,30 @@ Update the details of an individual VoIP device. See Devices for more detail.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::DevicesApi.new
+api_instance = PhoneComClient::DevicesApi.new
 
 account_id = 56 # Integer | Account ID
 
 device_id = 56 # Integer | Device ID
 
-opts = { 
-  data: SwaggerClient::CreateDeviceParams.new # CreateDeviceParams | Device data
+opts = {
+  data: PhoneComClient::CreateDeviceParams.new # CreateDeviceParams | Device data
 }
 
 begin
   #Update the details of an individual VoIP device.
   result = api_instance.replace_account_device(account_id, device_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling DevicesApi->replace_account_device: #{e}"
 end
 ```
@@ -295,9 +295,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **device_id** | **Integer**| Device ID | 
- **data** | [**CreateDeviceParams**](CreateDeviceParams.md)| Device data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **device_id** | **Integer**| Device ID |
+ **data** | [**CreateDeviceParams**](CreateDeviceParams.md)| Device data | [optional]
 
 ### Return type
 

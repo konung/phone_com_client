@@ -1,4 +1,4 @@
-# SwaggerClient::PaymentMethodsApi
+# PhoneComClient::PaymentMethodsApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -21,27 +21,27 @@ Create an individual payment method. See Account Payment Methods for more info o
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::PaymentMethodsApi.new
+api_instance = PhoneComClient::PaymentMethodsApi.new
 
 account_id = 56 # Integer | Account ID
 
-data = SwaggerClient::CreatePaymentParams.new # CreatePaymentParams | Payment data
+data = PhoneComClient::CreatePaymentParams.new # CreatePaymentParams | Payment data
 
 
 begin
   #Create an individual payment method.
   result = api_instance.create_account_payment_method(account_id, data)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling PaymentMethodsApi->create_account_payment_method: #{e}"
 end
 ```
@@ -50,8 +50,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **data** | [**CreatePaymentParams**](CreatePaymentParams.md)| Payment data | 
+ **account_id** | **Integer**| Account ID |
+ **data** | [**CreatePaymentParams**](CreatePaymentParams.md)| Payment data |
 
 ### Return type
 
@@ -78,16 +78,16 @@ Delete an individual payment method. See Account Payment Methods for more info o
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::PaymentMethodsApi.new
+api_instance = PhoneComClient::PaymentMethodsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -98,7 +98,7 @@ begin
   #Delete an individual payment method.
   result = api_instance.delete_account_payment_method(account_id, pm_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling PaymentMethodsApi->delete_account_payment_method: #{e}"
 end
 ```
@@ -107,8 +107,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **pm_id** | **Integer**| Payment Method ID | 
+ **account_id** | **Integer**| Account ID |
+ **pm_id** | **Integer**| Payment Method ID |
 
 ### Return type
 
@@ -135,16 +135,16 @@ Show details of an individual payment method. See Account Payment Methods for mo
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::PaymentMethodsApi.new
+api_instance = PhoneComClient::PaymentMethodsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -155,7 +155,7 @@ begin
   #Show details of an individual payment method.
   result = api_instance.get_account_payment_method(account_id, pm_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling PaymentMethodsApi->get_account_payment_method: #{e}"
 end
 ```
@@ -164,8 +164,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **pm_id** | **Integer**| Payment Method ID | 
+ **account_id** | **Integer**| Account ID |
+ **pm_id** | **Integer**| Payment Method ID |
 
 ### Return type
 
@@ -192,20 +192,20 @@ Get a list of payment methods for an account. See Account Payment Methods for mo
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::PaymentMethodsApi.new
+api_instance = PhoneComClient::PaymentMethodsApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   sort_id: 'sort_id_example', # String | ID sorting
   limit: 56, # Integer | Max results
@@ -217,7 +217,7 @@ begin
   #Get a list of payment methods for an account.
   result = api_instance.list_account_payment_methods(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling PaymentMethodsApi->list_account_payment_methods: #{e}"
 end
 ```
@@ -226,12 +226,12 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 
@@ -258,30 +258,30 @@ Replace the status of an individual payment method. See Account Payment Methods 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::PaymentMethodsApi.new
+api_instance = PhoneComClient::PaymentMethodsApi.new
 
 account_id = 56 # Integer | Account ID
 
 pm_id = 56 # Integer | Payment Method ID
 
-opts = { 
-  data: SwaggerClient::PatchPaymentParams.new # PatchPaymentParams | Payment data
+opts = {
+  data: PhoneComClient::PatchPaymentParams.new # PatchPaymentParams | Payment data
 }
 
 begin
   #Replace the status of an individual payment method.
   result = api_instance.patch_account_payment_method(account_id, pm_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling PaymentMethodsApi->patch_account_payment_method: #{e}"
 end
 ```
@@ -290,9 +290,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **pm_id** | **Integer**| Payment Method ID | 
- **data** | [**PatchPaymentParams**](PatchPaymentParams.md)| Payment data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **pm_id** | **Integer**| Payment Method ID |
+ **data** | [**PatchPaymentParams**](PatchPaymentParams.md)| Payment data | [optional]
 
 ### Return type
 

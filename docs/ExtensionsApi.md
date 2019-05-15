@@ -1,4 +1,4 @@
-# SwaggerClient::ExtensionsApi
+# PhoneComClient::ExtensionsApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -20,28 +20,28 @@ Create an individual extension. See extension for more details.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ExtensionsApi.new
+api_instance = PhoneComClient::ExtensionsApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
-  data: SwaggerClient::CreateExtensionParams.new # CreateExtensionParams | Account Extensions Data
+opts = {
+  data: PhoneComClient::CreateExtensionParams.new # CreateExtensionParams | Account Extensions Data
 }
 
 begin
   #Create an individual extension.
   result = api_instance.create_account_extension(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ExtensionsApi->create_account_extension: #{e}"
 end
 ```
@@ -50,8 +50,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **data** | [**CreateExtensionParams**](CreateExtensionParams.md)| Account Extensions Data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **data** | [**CreateExtensionParams**](CreateExtensionParams.md)| Account Extensions Data | [optional]
 
 ### Return type
 
@@ -78,16 +78,16 @@ Show details of an individual extension. See extension for more details.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ExtensionsApi.new
+api_instance = PhoneComClient::ExtensionsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -98,7 +98,7 @@ begin
   #Show details of an individual extension.
   result = api_instance.get_account_extension(account_id, extension_id, )
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ExtensionsApi->get_account_extension: #{e}"
 end
 ```
@@ -107,8 +107,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **extension_id** | **Integer**| Extension ID | 
+ **account_id** | **Integer**| Account ID |
+ **extension_id** | **Integer**| Extension ID |
 
 ### Return type
 
@@ -135,20 +135,20 @@ Get a list of extensions visible to the authenticated user or client. See extens
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ExtensionsApi.new
+api_instance = PhoneComClient::ExtensionsApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   filters_extension: ['filters_extension_example'], # Array<String> | Extension filter
   filters_name: ['filters_name_example'], # Array<String> | Name filter
@@ -164,7 +164,7 @@ begin
   #Get a list of extensions visible to the authenticated user or client.
   result = api_instance.list_account_extensions(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ExtensionsApi->list_account_extensions: #{e}"
 end
 ```
@@ -173,16 +173,16 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **filters_extension** | [**Array&lt;String&gt;**](String.md)| Extension filter | [optional] 
- **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **sort_extension** | **String**| Extension sorting | [optional] 
- **sort_name** | **String**| Name sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **filters_extension** | [**Array&lt;String&gt;**](String.md)| Extension filter | [optional]
+ **filters_name** | [**Array&lt;String&gt;**](String.md)| Name filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **sort_extension** | **String**| Extension sorting | [optional]
+ **sort_name** | **String**| Name sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 
@@ -209,30 +209,30 @@ Replace an individual extension. See extension for more details.
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::ExtensionsApi.new
+api_instance = PhoneComClient::ExtensionsApi.new
 
 account_id = 56 # Integer | Account ID
 
 extension_id = 56 # Integer | Extension ID
 
-opts = { 
-  data: SwaggerClient::ReplaceExtensionParams.new # ReplaceExtensionParams | Account Extensions Data
+opts = {
+  data: PhoneComClient::ReplaceExtensionParams.new # ReplaceExtensionParams | Account Extensions Data
 }
 
 begin
   #Replace an individual extension.
   result = api_instance.replace_account_extension(account_id, extension_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling ExtensionsApi->replace_account_extension: #{e}"
 end
 ```
@@ -241,9 +241,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **extension_id** | **Integer**| Extension ID | 
- **data** | [**ReplaceExtensionParams**](ReplaceExtensionParams.md)| Account Extensions Data | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **extension_id** | **Integer**| Extension ID |
+ **data** | [**ReplaceExtensionParams**](ReplaceExtensionParams.md)| Account Extensions Data | [optional]
 
 ### Return type
 

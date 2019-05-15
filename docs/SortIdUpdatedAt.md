@@ -1,9 +1,9 @@
-# SwaggerClient::SortIdUpdatedAt
+# PhoneComClient::SortIdUpdatedAt
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
-**updated_at** | **String** |  | [optional] 
+**id** | **String** |  | [optional]
+**updated_at** | **String** |  | [optional]
 
 

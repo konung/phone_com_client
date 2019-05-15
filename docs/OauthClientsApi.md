@@ -1,4 +1,4 @@
-# SwaggerClient::OauthClientsApi
+# PhoneComClient::OauthClientsApi
 
 All URIs are relative to *https://api.phone.com/v4*
 
@@ -19,16 +19,16 @@ Delete an individual OAuth client. See Account OAuth Clients for more info on th
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::OauthClientsApi.new
+api_instance = PhoneComClient::OauthClientsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -39,7 +39,7 @@ begin
   #Delete an individual OAuth client.
   result = api_instance.delete_account_oauth_client(account_id, client_id, )
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling OauthClientsApi->delete_account_oauth_client: #{e}"
 end
 ```
@@ -48,8 +48,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **client_id** | **Integer**| Client ID | 
+ **account_id** | **Integer**| Account ID |
+ **client_id** | **Integer**| Client ID |
 
 ### Return type
 
@@ -76,16 +76,16 @@ Show details of an individual OAuth client. See Account OAuth Clients for more i
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::OauthClientsApi.new
+api_instance = PhoneComClient::OauthClientsApi.new
 
 account_id = 56 # Integer | Account ID
 
@@ -96,7 +96,7 @@ begin
   #Show details of an individual OAuth client.
   result = api_instance.get_account_oauth_client(account_id, client_id, )
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling OauthClientsApi->get_account_oauth_client: #{e}"
 end
 ```
@@ -105,8 +105,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **client_id** | **Integer**| Client ID | 
+ **account_id** | **Integer**| Account ID |
+ **client_id** | **Integer**| Client ID |
 
 ### Return type
 
@@ -133,20 +133,20 @@ Get a list of OAuth clients for an account. See Account OAuth Clients for more i
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'phone_com_client'
 # setup authorization
-SwaggerClient.configure do |config|
+PhoneComClient.configure do |config|
   # Configure API key authorization: apiKey
   config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
   #config.api_key_prefix['Authorization'] = 'Bearer'
 end
 
-api_instance = SwaggerClient::OauthClientsApi.new
+api_instance = PhoneComClient::OauthClientsApi.new
 
 account_id = 56 # Integer | Account ID
 
-opts = { 
+opts = {
   filters_id: ['filters_id_example'], # Array<String> | ID filter
   sort_id: 'sort_id_example', # String | ID sorting
   limit: 56, # Integer | Max results
@@ -158,7 +158,7 @@ begin
   #Get a list of OAuth clients for an account.
   result = api_instance.list_account_oauth_clients(account_id, , opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue PhoneComClient::ApiError => e
   puts "Exception when calling OauthClientsApi->list_account_oauth_clients: #{e}"
 end
 ```
@@ -167,12 +167,12 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **Integer**| Account ID | 
- **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional] 
- **sort_id** | **String**| ID sorting | [optional] 
- **limit** | **Integer**| Max results | [optional] 
- **offset** | **Integer**| Results to skip | [optional] 
- **fields** | **String**| Field set | [optional] 
+ **account_id** | **Integer**| Account ID |
+ **filters_id** | [**Array&lt;String&gt;**](String.md)| ID filter | [optional]
+ **sort_id** | **String**| ID sorting | [optional]
+ **limit** | **Integer**| Max results | [optional]
+ **offset** | **Integer**| Results to skip | [optional]
+ **fields** | **String**| Field set | [optional]
 
 ### Return type
 
